@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript ile Asal SayÄ± Bulma</title>
+</head>
+
+<body>
+
+    BaÅlangÄ±Ã§ SayÄ± :
+    <input type="text" id="sayi1" />
+    <br />BitiÅ SayÄ± :
+    <input type="text" id="sayi2" />
+    <br />
+    <input type="button" value="Hesapla" onclick="islemHesapla()" />
+    <br />
+    <div id="islemSonuc">
+
+    </div>
+
+    <script type="text/javascript">
+        function asalSayiKontrol(bas, bit)
+        {
+            var asalDizi = [];
+            for (var i = bas; i <= bit; i++)
+            {
+                var asalKontrol = true;
+                for (var j = 2; j <= i; j++)
+                {
+                    if (i != j && i % j == 0)
+                    {
+                        asalKontrol = false;
+                        break;
+                    }
+                }
+                if (asalKontrol)
+                {
+                    asalDizi.push(i);
+                }
+            }
+            return asalDizi;
+        }
+
+
+        function islemHesapla()
+        {
+
+            var sayi1 = document.getElementById('sayi1')
+                .value;
+            var sayi2 = document.getElementById('sayi2')
+                .value;
+
+            sayi1 = parseInt(sayi1);
+            sayi2 = parseInt(sayi2);
+
+            if (sayi1 == 1) sayi1 = 2;
+            if (sayi2 == 1) sayi2 = 2;
+
+            if (sayi1 >= sayi2)
+            {
+                alert("BaÅlangÄ±Ã§ sayÄ±sÄ± bitiÅ sayÄ±sÄ±ndan bÃ¼yÃ¼k olmamalÄ±!");
+                return false;
+            }
+            var asalSayiDizi;
+
+            if (asalSayiDizi = asalSayiKontrol(sayi1, sayi2))
+            {
+                document.getElementById('islemSonuc')
+                    .innerHTML = '';
+                var tmpHTML = '';
+                asalSayiDizi.forEach(function (key)
+                {
+                    tmpHTML += key + ' ';
+                });
+                document.getElementById('islemSonuc')
+                    .innerHTML = 'Bulunan DeÄerler : ' + tmpHTML;
+            }
+
+        }
+    </script>
+</body>
+
+</html>
