@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>JavaScript ile Asal SayÄ± Bulma</title>
+    <title>JavaScript ile Asal Sayı Bulma</title>
 </head>
 
 <body>
 
-    BaÅlangÄ±Ã§ SayÄ± :
+    Başlangıç Sayısı :
     <input type="text" id="sayi1" />
-    <br />BitiÅ SayÄ± :
+    <br />Bitiş Sayısı :
     <input type="text" id="sayi2" />
     <br />
     <input type="button" value="Hesapla" onclick="islemHesapla()" />
@@ -59,7 +59,7 @@
 
             if (sayi1 >= sayi2)
             {
-                alert("BaÅlangÄ±Ã§ sayÄ±sÄ± bitiÅ sayÄ±sÄ±ndan bÃ¼yÃ¼k olmamalÄ±!");
+                alert("Başlangıç sayısı bitiş sayısından büyük olmamalı!");
                 return false;
             }
             var asalSayiDizi;
@@ -74,7 +74,7 @@
                     tmpHTML += key + ' ';
                 });
                 document.getElementById('islemSonuc')
-                    .innerHTML = 'Bulunan DeÄerler : ' + tmpHTML;
+                    .innerHTML = 'Bulunan Değerler : ' + tmpHTML;
             }
 
         }
